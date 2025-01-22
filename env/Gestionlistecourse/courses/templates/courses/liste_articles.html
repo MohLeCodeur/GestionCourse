@@ -1,0 +1,33 @@
+<!-- listes_articles.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Articles</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Liste des Articles</h1>
+        </header>
+        <section class="articles-list">
+            <ul>
+                {% for article in articles %}
+                    <li class="article-item">
+                        <span class="article-name">{{ article.nom }}</span>
+                        <span class="article-quantity">Quantité: {{ article.quantite }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="add-article">
+            <a href="{% url 'ajouter_article' %}" class="add-button">Ajouter un article</a>
+        </section>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
