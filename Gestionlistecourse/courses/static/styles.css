@@ -110,3 +110,17 @@ header {
 .back-button:hover {
     background-color: #e0a800;
 }
+/* styles.css */
+.delete-button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
