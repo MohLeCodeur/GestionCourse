@@ -24,3 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const markButtons = document.querySelectorAll('.mark-button');
+
+    markButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            const confirmMark = confirm('Êtes-vous sûr de vouloir marquer cet article comme acheté/non acheté ?');
+            if (!confirmMark) {
+                event.preventDefault();  // Annule l'action si l'utilisateur clique sur "Non"
+            }
+        });
+    });
+});

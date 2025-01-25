@@ -124,3 +124,18 @@ header {
 .delete-button:hover {
     background-color: #c82333;
 }
+
+.mark-button {
+    padding: 5px 10px;
+    background-color: #17a2b8;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.mark-button:hover {
+    background-color: #138496;
+}
