@@ -11,3 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
         addButton.style.backgroundColor = '#28a745';
     });
 });
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            const confirmDelete = confirm('Êtes-vous sûr de vouloir supprimer cet article ?');
+            if (!confirmDelete) {
+                event.preventDefault();  // Annule la suppression si l'utilisateur clique sur "Non"
+            }
+        });
+    });
+});

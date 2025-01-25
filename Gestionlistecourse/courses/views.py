@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Article
 from .forms import ArticleForm
 from django.shortcuts import render, redirect
-
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Vue pour lister les articles
 def liste_articles(request):
@@ -25,3 +25,8 @@ def ajouter_article(request):
     else:
         form = ArticleForm()
     return render(request, 'courses/ajouter_article.html', {'form': form})
+# Vue pour supprimer un article
+def supprimer_article(request, article_id):
+    article = get_object_or_404(Article, id=article_id)  # Récupère l'article ou renvoie une 404
+    article.delete()  # Supprime l'article
+    return redirect('liste_articles')  # Redirige vers la liste des articles
