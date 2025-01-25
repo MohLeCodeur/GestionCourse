@@ -19,6 +19,14 @@
                     <li class="article-item">
                         <span class="article-name">{{ article.nom }}</span>
                         <span class="article-quantity">Quantité: {{ article.quantite }}</span>
+                        <span class="article-status">Acheté: {{ article.achete|yesno:"Oui,Non" }}</span>
+                        <!-- Bouton de marquage comme acheté -->
+                        <form action="{% url 'marquer_achete' article.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="mark-button">
+                                {% if article.achete %}Marquer comme non acheté{% else %}Marquer comme acheté{% endif %}
+                            </button>
+                        </form>
                         <!-- Bouton de suppression -->
                         <form action="{% url 'supprimer_article' article.id %}" method="post" style="display: inline;">
                             {% csrf_token %}
