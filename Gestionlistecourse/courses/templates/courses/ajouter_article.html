@@ -1,0 +1,35 @@
+<!-- ajouter_article.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Article</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Ajouter un Article</h1>
+        </header>
+        
+        <!-- Formulaire pour ajouter un article -->
+        <section class="add-article-form">
+            <form method="post">
+                {% csrf_token %}
+                <!-- Affichage du formulaire -->
+                {{ form.as_p }}
+                <button type="submit" class="submit-button">Ajouter</button>
+            </form>
+        </section>
+        
+        <!-- Lien pour revenir à la liste des articles -->
+        <section class="go-back">
+            <a href="{% url 'liste_articles' %}" class="back-button">Retour à la liste</a>
+        </section>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

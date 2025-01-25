@@ -1,0 +1,141 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+.articles-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.article-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.article-quantity {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.add-article {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.add-button:hover {
+    background-color: #218838;
+}
+
+.add-article-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.submit-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.go-back {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffc107;
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #e0a800;
+}
+/* styles.css */
+.delete-button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.mark-button {
+    padding: 5px 10px;
+    background-color: #17a2b8;
+    color: white;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.mark-button:hover {
+    background-color: #138496;
+}

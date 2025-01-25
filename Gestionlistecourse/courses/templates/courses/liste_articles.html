@@ -1,0 +1,46 @@
+<!-- listes_articles.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Articles</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Liste des Articles</h1>
+        </header>
+        <section class="articles-list">
+            <ul>
+                {% for article in articles %}
+                    <li class="article-item">
+                        <span class="article-name">{{ article.nom }}</span>
+                        <span class="article-quantity">Quantité: {{ article.quantite }}</span>
+                        <span class="article-status">Acheté: {{ article.achete|yesno:"Oui,Non" }}</span>
+                        <!-- Bouton de marquage comme acheté -->
+                        <form action="{% url 'marquer_achete' article.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="mark-button">
+                                {% if article.achete %}Marquer comme non acheté{% else %}Marquer comme acheté{% endif %}
+                            </button>
+                        </form>
+                        <!-- Bouton de suppression -->
+                        <form action="{% url 'supprimer_article' article.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Supprimer</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="add-article">
+            <a href="{% url 'ajouter_article' %}" class="add-button">Ajouter un article</a>
+        </section>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
