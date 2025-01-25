@@ -19,6 +19,11 @@
                     <li class="article-item">
                         <span class="article-name">{{ article.nom }}</span>
                         <span class="article-quantity">Quantité: {{ article.quantite }}</span>
+                        <!-- Bouton de suppression -->
+                        <form action="{% url 'supprimer_article' article.id %}" method="post" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-button">Supprimer</button>
+                        </form>
                     </li>
                 {% endfor %}
             </ul>
